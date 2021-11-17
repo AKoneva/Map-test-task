@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pin_map" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="0AC-z0-cLJ">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="t0c-UT-gdH" appends="YES" id="xEb-qX-Qm6"/>
+                                </connections>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjs-Hd-Eu6">
+                                <rect key="frame" x="45" y="804" width="150" height="43"/>
+                                <color key="backgroundColor" red="0.3182727098" green="0.52638024090000002" blue="0.49707317350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="ZbR-Vx-1Mm"/>
+                                    <constraint firstAttribute="height" constant="43" id="f1W-30-VHO"/>
+                                </constraints>
+                                <state key="normal" title="Delete Routes">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.96862745100000003" blue="0.97729569569999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteRoutes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oPU-ps-ED9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOM-uU-m5G">
+                                <rect key="frame" x="219" y="804" width="150" height="43"/>
+                                <color key="backgroundColor" red="0.3182727098" green="0.52638024090000002" blue="0.49707317350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="YqU-q1-BE2"/>
+                                    <constraint firstAttribute="width" constant="150" id="cNg-rP-uhA"/>
+                                </constraints>
+                                <state key="normal" title="Delete Pin">
+                                    <color key="titleColor" red="0.97647058819999999" green="0.96862745100000003" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="deletePin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x4b-FJ-pKo"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TOM-uU-m5G" secondAttribute="bottom" constant="15" id="44b-N8-fP5"/>
+                            <constraint firstAttribute="trailing" secondItem="0AC-z0-cLJ" secondAttribute="trailing" id="818-xE-0mz"/>
+                            <constraint firstAttribute="bottom" secondItem="0AC-z0-cLJ" secondAttribute="bottom" id="Fv4-gB-TFW"/>
+                            <constraint firstItem="0AC-z0-cLJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ooj-ub-d1t"/>
+                            <constraint firstItem="rjs-Hd-Eu6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="eGd-Zb-jKn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rjs-Hd-Eu6" secondAttribute="bottom" constant="15" id="glj-O6-xLz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TOM-uU-m5G" secondAttribute="trailing" constant="45" id="kUA-O4-0jW"/>
+                            <constraint firstItem="0AC-z0-cLJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xoA-dc-0co"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="deletePinButton" destination="TOM-uU-m5G" id="964-gS-0oN"/>
+                        <outlet property="deleteRouteButton" destination="rjs-Hd-Eu6" id="UDZ-QQ-6pP"/>
+                        <outlet property="mapView" destination="0AC-z0-cLJ" id="hCz-MF-4vc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="t0c-UT-gdH"/>
+            </objects>
+            <point key="canvasLocation" x="71.014492753623188" y="88.392857142857139"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
