@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -23,52 +24,91 @@
                                     <outletCollection property="gestureRecognizers" destination="t0c-UT-gdH" appends="YES" id="xEb-qX-Qm6"/>
                                 </connections>
                             </mapView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjs-Hd-Eu6">
-                                <rect key="frame" x="45" y="804" width="150" height="43"/>
-                                <color key="backgroundColor" red="0.3182727098" green="0.52638024090000002" blue="0.49707317350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hJL-id-xeV">
+                                <rect key="frame" x="94.5" y="72" width="225" height="66.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Long tap to add pin to map." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9lf-4K-EsU">
+                                        <rect key="frame" x="8" y="23" width="209" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.88577239046391754" green="0.88577239046391754" blue="0.88577239046391754" alpha="0.80652104591836737" colorSpace="custom" customColorSpace="displayP3"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="ZbR-Vx-1Mm"/>
-                                    <constraint firstAttribute="height" constant="43" id="f1W-30-VHO"/>
+                                    <constraint firstAttribute="bottom" secondItem="9lf-4K-EsU" secondAttribute="bottom" constant="23" id="1u5-iV-qWX"/>
+                                    <constraint firstAttribute="trailing" secondItem="9lf-4K-EsU" secondAttribute="trailing" constant="8" id="Hsf-Zh-oEj"/>
+                                    <constraint firstItem="9lf-4K-EsU" firstAttribute="leading" secondItem="hJL-id-xeV" secondAttribute="leading" constant="8" id="KlU-pe-Vhf"/>
+                                    <constraint firstItem="9lf-4K-EsU" firstAttribute="top" secondItem="hJL-id-xeV" secondAttribute="top" constant="23" id="M2e-2X-yKu"/>
                                 </constraints>
-                                <state key="normal" title="Delete Routes">
-                                    <color key="titleColor" red="0.97647058819999999" green="0.96862745100000003" blue="0.97729569569999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="deleteRoutes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oPU-ps-ED9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOM-uU-m5G">
-                                <rect key="frame" x="219" y="804" width="150" height="43"/>
-                                <color key="backgroundColor" red="0.3182727098" green="0.52638024090000002" blue="0.49707317350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="YqU-q1-BE2"/>
-                                    <constraint firstAttribute="width" constant="150" id="cNg-rP-uhA"/>
-                                </constraints>
-                                <state key="normal" title="Delete Pin">
-                                    <color key="titleColor" red="0.97647058819999999" green="0.96862745100000003" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="deletePin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x4b-FJ-pKo"/>
-                                </connections>
-                            </button>
+                            </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="19" translatesAutoresizingMaskIntoConstraints="NO" id="GJr-CL-A7c">
+                                <rect key="frame" x="67" y="755" width="280" height="93"/>
+                                <subviews>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="bar" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="AN4-MY-l22">
+                                        <rect key="frame" x="39.5" y="0.0" width="201" height="32"/>
+                                        <segments>
+                                            <segment title="" image="figure.walk" catalog="system" width="100"/>
+                                            <segment title="" image="car.fill" catalog="system" width="100"/>
+                                        </segments>
+                                        <color key="selectedSegmentTintColor" systemColor="groupTableViewBackgroundColor"/>
+                                    </segmentedControl>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="uLk-cx-jx6">
+                                        <rect key="frame" x="0.0" y="50" width="280" height="43"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rjs-Hd-Eu6">
+                                                <rect key="frame" x="0.0" y="0.0" width="128" height="43"/>
+                                                <color key="backgroundColor" red="0.3182727098" green="0.52638024090000002" blue="0.49707317350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="f1W-30-VHO"/>
+                                                </constraints>
+                                                <state key="normal" title="Delete Routes">
+                                                    <color key="titleColor" red="0.97647058819999999" green="0.96862745100000003" blue="0.97729569569999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deleteRoutes:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oPU-ps-ED9"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TOM-uU-m5G">
+                                                <rect key="frame" x="152" y="0.0" width="128" height="43"/>
+                                                <color key="backgroundColor" red="0.3182727098" green="0.52638024090000002" blue="0.49707317350000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="43" id="YqU-q1-BE2"/>
+                                                </constraints>
+                                                <state key="normal" title="Delete Pin">
+                                                    <color key="titleColor" red="0.97647058819999999" green="0.96862745100000003" blue="0.95294117649999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="deletePin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="x4b-FJ-pKo"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="280" id="5Ne-Is-CKT"/>
+                                        </constraints>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="TOM-uU-m5G" secondAttribute="bottom" constant="15" id="44b-N8-fP5"/>
+                            <constraint firstItem="GJr-CL-A7c" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0y1-jr-TcQ"/>
                             <constraint firstAttribute="trailing" secondItem="0AC-z0-cLJ" secondAttribute="trailing" id="818-xE-0mz"/>
+                            <constraint firstItem="hJL-id-xeV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="24" id="8xu-LP-5W7"/>
+                            <constraint firstItem="hJL-id-xeV" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="F33-UE-Crn"/>
                             <constraint firstAttribute="bottom" secondItem="0AC-z0-cLJ" secondAttribute="bottom" id="Fv4-gB-TFW"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="GJr-CL-A7c" secondAttribute="bottom" constant="14" id="IZf-r8-8uI"/>
                             <constraint firstItem="0AC-z0-cLJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Ooj-ub-d1t"/>
-                            <constraint firstItem="rjs-Hd-Eu6" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="eGd-Zb-jKn"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="rjs-Hd-Eu6" secondAttribute="bottom" constant="15" id="glj-O6-xLz"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="TOM-uU-m5G" secondAttribute="trailing" constant="45" id="kUA-O4-0jW"/>
                             <constraint firstItem="0AC-z0-cLJ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="xoA-dc-0co"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="deletePinButton" destination="TOM-uU-m5G" id="964-gS-0oN"/>
                         <outlet property="deleteRouteButton" destination="rjs-Hd-Eu6" id="UDZ-QQ-6pP"/>
+                        <outlet property="hintView" destination="hJL-id-xeV" id="Itp-CS-TDZ"/>
                         <outlet property="mapView" destination="0AC-z0-cLJ" id="hCz-MF-4vc"/>
+                        <outlet property="segmentControl" destination="AN4-MY-l22" id="v6M-a1-VbZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -78,6 +118,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="car.fill" catalog="system" width="128" height="95"/>
+        <image name="figure.walk" catalog="system" width="95" height="128"/>
+        <systemColor name="groupTableViewBackgroundColor">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
